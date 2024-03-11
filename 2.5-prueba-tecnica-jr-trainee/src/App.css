@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    min-width: 100vw;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    margin: 0;
+    min-width: 100vw;
+    height: 100%;
+    place-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+section {
+    display: flex;
+    width: 100%;
+    place-items: center;
+    justify-content: center;
+}
