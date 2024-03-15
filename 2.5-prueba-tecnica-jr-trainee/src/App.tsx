@@ -1,35 +1,23 @@
-
-import { useEffect, useState } from 'react'
 import './App.css'
+import { getRandomCatFact } from './logic/RandomCatFact'
+import { useCatFact } from './hooks/useCatFact'
+import { useCatImageUrl } from './hooks/useCatImageUrl'
+import { CatFact, CatImageUrl } from './types'
 
-const RANDOM_CAT_FACT_URL = 'https://catfact.ninja/fact'
-const RANDOM_IMAGE_URL = 'https://cataas.com/says/hello'
-
-interface RandomCatFact {
-  fact: string
-  length: number
-}
+const ERROR_IMAGE = 'https://img.freepik.com/vector-gratis/advertencia-red-internet-404-error-pagina-o-archivo-no-encontrado-pagina-web-pagina-error-internet-o-problema-no-encontrado-red-error-404-presente-hombre-durmiendo-pantalla_1150-55450.jpg'
 
 function App() {
 
-  const [catFact, setCatFact] = useState<string>('un random fact')
+  const { catFact, setRandomCatFact }: CatFact = useCatFact()
+  const { imageUrl, setCatImageUrl }: CatImageUrl = useCatImageUrl({ catFact })
 
-  const getRandomCatFact = async (): Promise<string> => {
-    const res: Response = await fetch(RANDOM_CAT_FACT_URL)
-    const data: RandomCatFact = await res.json()
-
-    return data?.fact
+  const handleClick = () => {
+    getRandomCatFact().then(res => setRandomCatFact(res))
   }
 
-  useEffect(() => {
-    getRandomCatFact().then(
-      res => {
-        const newCatFact: string = res
-        const firstWord: string = newCatFact.split(' ').slice(0, 1).toString()
-        setCatFact(firstWord)
-      }
-    )
-  }, [])
+  const handleError = () => {
+    setCatImageUrl(ERROR_IMAGE)
+  }
 
   return (
     <main>
@@ -37,8 +25,11 @@ function App() {
         <h2>{ catFact }</h2>
       </section>
       <section>
-        <img src={RANDOM_IMAGE_URL} alt="a random cat fact" />
+        <img src={imageUrl} onError={handleError} alt="a random cat fact" />
       </section>
+      <footer>
+        <button onClick={handleClick}>Nuevo fact</button>
+      </footer>
     </main>
   )
 }
