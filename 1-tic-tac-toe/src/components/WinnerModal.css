@@ -1,0 +1,42 @@
+.modal-container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.winner-modal {
+    width: 30%;
+    height: 30%;
+    display: grid;
+    grid-template-rows: 1fr 3fr 2fr;
+    gap: 5px;
+    place-content: center;
+    place-items: center;
+    padding: 10px;
+    background-color: #202b38;
+    border: 2px solid #dbdbdb;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    place-content: center;
+}
+
+button {
+    padding: 5px;
+    font-size: 1em;
+    background: none;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+    font-size: 1em;
+    background-color: #dbdbdb42;
+}
