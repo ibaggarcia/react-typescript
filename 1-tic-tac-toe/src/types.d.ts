@@ -1,5 +1,7 @@
 export type cellBoard = 'X' | 'O' | null
 
+export type winners = 'X' | 'O' | null | '='
+
 export type board = [
   cellBoard, cellBoard, cellBoard,
   cellBoard, cellBoard, cellBoard,

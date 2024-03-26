@@ -1,8 +1,8 @@
-import { turnSymbols } from "../types"
+import { winners } from "../types"
 import './Square.css'
 
 interface Props{
-    children: turnSymbols | null
+    children: winners
     updateBoard?: (index: number) => void
     index?: number
 }

@@ -28,8 +28,9 @@
 }
 
 button {
-    padding: 5px;
+    padding: 10px;
     font-size: 1em;
+    font-weight: bold;
     background: none;
     border: 1px solid #dbdbdb;
     border-radius: 5px;
