@@ -1,6 +1,6 @@
-export type cellBoard = 'X' | 'O' | null
+export type cellBoard = character | null
 
-export type winners = 'X' | 'O' | null | '='
+export type winners = character | null | '='
 
 export type board = [
   cellBoard, cellBoard, cellBoard,
@@ -8,11 +8,17 @@ export type board = [
   cellBoard, cellBoard, cellBoard
 ]
 
-type turnSymbols = 'X' | 'O'
+type turnSymbols = character | null
 
 export interface Turns {
-  X: 'X'
-  O: 'O'
+  X: character | null
+  O: character | null
 }
 
 type winCombo = [number, number, number]
+
+type character = '😀' | '😃' | '😄' | '😁' | '😆' | '😅' | '🤣'
+  | '😂' | '🙂' | '🙃' | '🫠' | '😉' | '😊' | '😇' | '😈' | '🤬' 
+  | '🤠' | '🫥' | '😶‍🌫️' | '😷' | '🤢' | '🤯' | '🥳' | '🥸' | '😵‍💫'
+  | '🤧' | '🤮' | '🤥' | '🥶' | '😎' | '💀' | '☠️' | '💩' | '🤡'
+  | '👹' | '👺' | '👻' | '👽' | '👾' | '🤖' | '🪯' | '♈' | '♉'

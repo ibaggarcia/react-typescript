@@ -1,0 +1,13 @@
+.character {
+    font-size: 2.5em;
+    padding: 3px;
+    border-radius: 5px;
+    border: 2px solid #dbdbdb;
+}
+
+.character:hover {
+    cursor: pointer;
+    font-size: 3rem;
+    background-color: #dbdbdb77;
+    transition: all 1s;
+}
